@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
 
+    public Transform attackPoint;
+    public LayerMask playerLayer;
 
     // Start is called before the first frame update
     void Start()

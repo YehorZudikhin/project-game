@@ -9,11 +9,20 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    public int maxHealth = 100;
+    int currentHealth;
+
     public float attackRange = 0.5f;
     public int basicAttackDamage = 20;
 
     public float basicAttackRate = 1f;  ///  ( 1 / attackRate )
     float nextAttackTime = 0f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
 
     // Update is called once per frame
     void Update()
@@ -59,5 +68,41 @@ public class PlayerCombat : MonoBehaviour
         }
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void ReceiveHeal(int heal)
+    {
+        Debug.Log("Player replenished " + heal + " health.");
+        currentHealth = Mathf.Min(maxHealth, (currentHealth + heal));
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth = Mathf.Max(0, (currentHealth-damage));
+        Debug.Log("Player took " + damage + " damage.");
+
+        //Play hurt animation
+        animator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Player died!");
+
+        // Die animation
+        animator.SetBool("IsDead", true);
+
+        // Disable the player
+        // TODO: disable physics except floor collision, disable controls, trigger menu
+        ///GetComponent<Collider2D>().enabled = false;
+        ///this.enabled = false;
+
+        // Open "Game Over" Menu
+
     }
 }

@@ -514,7 +514,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5355,6 +5355,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1508149451}
   maxHealth: 100
+  attackPoint: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &1508149451
 Animator:
   serializedVersion: 5
@@ -5415,7 +5419,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1917929920}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 3
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5906,7 +5910,6 @@ GameObject:
   - component: {fileID: 1917929918}
   - component: {fileID: 1917929922}
   - component: {fileID: 1917929924}
-  - component: {fileID: 1917929925}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -6152,21 +6155,10 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  maxHealth: 100
   attackRange: 0.4
   basicAttackDamage: 20
   basicAttackRate: 1
---- !u!114 &1917929925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917929915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1060a238444dd594097b779c938144ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1936333000
 GameObject:
   m_ObjectHideFlags: 0
