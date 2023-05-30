@@ -1,11 +1,5 @@
 Pixel Art Platformer - Village Props
 
-2.3.0
-	- Add 20 new props.
-	- Chest animation control improved.
-	- Tileset collider impoved.
-	- Platform and ladder sprites improved.
-
 2.2.0
 	- Fire FX improved.
 	- Some prefabs are renamed for consistency.
